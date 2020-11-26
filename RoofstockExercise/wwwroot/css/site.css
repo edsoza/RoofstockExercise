@@ -1,0 +1,196 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Menu */
+
+.mainColumns {
+    display: grid;
+    grid-template-rows: 120px auto;
+    grid-template-columns: 300px 1fr 85px;
+    grid-template-areas: "leftColumn rightColumn .";
+    grid-column-gap: 0;
+}
+
+    .mainColumns .mainLeftColumn {
+        grid-area: leftColumn;
+        min-height: 100vh;
+        min-width: 300px;
+        top: 0;
+        bottom: 0;
+    }
+
+    .mainColumns .mainRightColumn {
+        grid-area: rightColumn;
+    }
+
+@media (max-width: 1200px) {
+    .mainColumns {
+        grid-template-rows: 180px auto;
+        grid-template-columns: 80px 1fr 0 !important;
+        grid-template-areas: "leftColumn rightColumn .";
+    }
+
+        .mainColumns .mainLeftColumn {
+            min-width: 60px;
+        }
+
+    .menuItems {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        background-color: white;
+        padding: 0px 35px;
+        margin-bottom: 16px !important;
+        cursor: pointer;
+    }
+
+    .mainColumns .mainRightColumn {
+        grid-area: rightColumn;
+    }
+}
+
+/*Sidebar*/
+
+.menuSide {
+    width: 100%;
+}
+
+.menuLogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0px;
+}
+
+    .menuLogo img {
+        width: 100px;
+        align-self: center;
+    }
+
+.menuItems {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    background-color: white;
+    padding: 0px 35px;
+    margin-bottom: 16px !important;
+    cursor: pointer;
+}
+
+    .menuItems i {
+        color: #92aca0;
+        margin-right: 10px;
+        align-self: center;
+    }
+
+    .menuItems span {
+        margin-right: 10px;
+        color: #808083;
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 24px;
+        align-self: center;
+    }
+
+.menuListItems {
+    height: auto;
+    overflow-y: auto;
+    padding-bottom: 60px;
+}
+
+    .menuListItems .active {
+        width: 100% !important;
+        background-color: #92ACA0 !important;
+        padding: 0px 35px !important;
+        height: 48px !important;
+    }
+
+        .menuListItems .active i {
+            color: white !important;
+        }
+
+        .menuListItems .active span {
+            color: white !important;
+        }
+
+.menuDivider {
+    width: 100%;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+    .menuDivider div {
+        width: 100%;
+        border-top: 1px solid #E5E5E5;
+        margin-top: 4px;
+        margin-bottom: 20px;
+    }

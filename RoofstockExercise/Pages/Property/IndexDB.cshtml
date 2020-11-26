@@ -1,0 +1,87 @@
+﻿@page
+@model RoofstockExercise.Pages.Property.IndexDBModel
+@{
+}
+
+<body>
+    <div class="col-12 section">
+        <h1>DB Data</h1>
+        <table id="properties" class="table display" style="width: 100%;">
+        </table>
+    </div>
+</body>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        var str = $('<textarea />').html('@Model.Properties').text();
+
+        $(document).ready(function () {
+            var propertiesTable = $('#properties').DataTable({
+                columnDefs: [
+                    { "title": "Id", "targets": 0 },
+                    { "title": "Address", "targets": 1 },
+                    { "title": "Year Built", "targets": 2 },
+                    { "title": "List Price", "targets": 3 },
+                    { "title": "Monthly Rent", "targets": 4 },
+                    { "title": "Gross Yield", "targets": 5 }
+                ],
+                paging: true,
+                searching: true,
+                processing: true,
+                ordering: true,
+                order: [[1, "desc"]],
+                pageLength: 25,
+                language: {
+                    search: "",
+                    searchPlaceholder: "Search",
+                    paginate: {
+                        next: 'Next',
+                        previous: 'Prev'
+                    },
+                    info: "Showing _START_ - _END_ of _TOTAL_ results",
+                },
+                dom: '<"top table-result-information"fi>rt<"bottom pagination-sm"p><"clear">',
+                data: JSON.parse(str),
+
+                autoWidth: false,
+                columns: [
+                    {
+                        data: 'Id'
+                    },
+                    {
+                        data: 'Address',
+                    },
+                    {
+                        data: 'YearBuilt',
+                    },
+                    {
+                        data: 'ListPrice',
+                        render: function (data) {
+                            return data.toFixed(2);
+                        }
+                    },
+                    {
+                        data: 'MonthyRent',
+                        render: function (data) {
+                            return data.toFixed(2);
+                        }
+                    },
+                    {
+                        data: 'GrossYield',
+                        render: function (data) {
+                            return data.toFixed(2) + ' %';
+                        }
+                    },
+                    {
+                        data: 'Id',
+                        render: function (data) {
+                            return `<button type="button" onclick="location.href='/Property/Delete?id=` + data + `'" class="btn btn-danger">Delete</button>`;
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+}

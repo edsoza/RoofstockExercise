@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> @ViewData["Title"] - RoofstockExercise</title>
+    <partial name="Shared/_Styles" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container" style="width:230px;">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <i class="fa fa-building" aria-hidden="true"></i>
+                    RoofstockExercise
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="mainColumns">
+        <div class="mainLeftColumn">
+            <partial name="_Menu" />
+        </div>
+        <div class="mainRightColumn">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - RoofstockExercise
+        </div>
+    </footer>
+
+    <partial name="Shared/_Modals" />
+    <partial name="Shared/_Scripts" />
+    @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ("@ViewData["InsertResult"]" == "200") {
+                $('#alreadyCreated').modal('show');
+            }
+        });
+    </script>
+</body>
+</html >
